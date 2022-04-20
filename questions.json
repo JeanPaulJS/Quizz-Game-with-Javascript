@@ -1,0 +1,34 @@
+[
+    {
+        "question": "Cual es la diferencia entre ser y no ser?",
+        "choice1": "<El ser es un todo>",
+        "choice2": "<Pienso luego existo>",
+        "choice3": "<Ser para vivir y no ser para existir>",
+        "choice4": "<Pensar es algo irracional>",
+        "answer": 1
+    },
+    {
+        "question": "where es la diferencia entre ser y no ser?",
+        "choice1": "<El ser es un todo>",
+        "choice2": "<Pienso luego existo>",
+        "choice3": "<Ser para vivir y no ser para existir>",
+        "choice4": "<Pensar es algo irracional>",
+        "answer": 2
+    },
+    {
+        "question": "waht es la diferencia entre ser y no ser?",
+        "choice1": "<El ser es un todo>",
+        "choice2": "<Pienso luego existo>",
+        "choice3": "<Ser para vivir y no ser para existir>",
+        "choice4": "<Pensar es algo irracional>",
+        "answer": 3
+    },
+    {
+        "question": "who es la diferencia entre ser y no ser?",
+        "choice1": "<El ser es un todo>",
+        "choice2": "<Pienso luego existo>",
+        "choice3": "<Ser para vivir y no ser para existir>",
+        "choice4": "<Pensar es algo irracional>",
+        "answer": 4
+    }
+]

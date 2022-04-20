@@ -12,40 +12,21 @@ let score = 0;
 let questionCounter = 0;
 let availableQuesions = [];
 
-let questions = [
-    {
-        question: "Cual es la diferencia entre ser y no ser?",
-        choice1: "<JavaScript>",
-        choice2: "<JavaScrdsipt>",
-        choice3: "<JavaScrdsfgipt>",
-        choice4: "<JavaScdsgsdgript>",
-        answer: 1
-    },
-    {
-        question: "where es la diferencia entre ser y no ser?",
-        choice1: "<JavaScript>",
-        choice2: "<JavaScrdsipt>",
-        choice3: "<JavaScrdsfgipt>",
-        choice4: "<JavaScdsgsdgript>",
-        answer: 4
-    },
-    {
-        question: "who es la diferencia entre ser y no ser?",
-        choice1: "<JavaScript>",
-        choice2: "<JavaScrdsipt>",
-        choice3: "<JavaScrdsfgipt>",
-        choice4: "<JavaScdsgsdgript>",
-        answer: 1
-    },
-    {
-        question: "waht es la diferencia entre ser y no ser?",
-        choice1: "<JavaScript>",
-        choice2: "<JavaScrdsipt>",
-        choice3: "<JavaScrdsfgipt>",
-        choice4: "<JavaScdsgsdgript>",
-        answer: 3
-    }
-]
+let questions = [];
+
+fetch("questions.json")
+    .then(res => {
+        return res.json();
+    })
+    .then(loadedQuestions => {
+        console.log(loadedQuestions);
+        questions = loadedQuestions;
+        startGame();
+    })
+    .catch(err => {
+        console.error(err);
+    });
+
     
 //Constants
 const CORRECT_BONUS = 10;
@@ -54,7 +35,8 @@ const MAX_QUESTIONS = 4;
 startGame = () => {
     questionCounter = 0;
     score = 0;
-    availableQuesions = [ ... questions];    getNewQuestion();
+    availableQuesions = [ ...questions];  
+    getNewQuestion();
 };
 
 getNewQuestion = () => {
@@ -72,8 +54,8 @@ getNewQuestion = () => {
     currentQuestion = availableQuesions[questionIndex];
     question.innerText = currentQuestion.question;
 
-    choices.forEach( choice => {
-       const number = choice.dataset['number'];
+    choices.forEach(choice => {
+       const number = choice.dataset["number"];
        choice.innerText = currentQuestion["choice" + number];
     });
 
@@ -112,5 +94,5 @@ incrementScore = num => {
     scoreText.innerText = score;
 }
 
-startGame();
+
 
